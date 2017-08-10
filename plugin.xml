@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-airservice" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>AirService</name>
+    <js-module name="AirService" src="www/AirService.js">
+      <!-- call the plugin in ionic project -->
+      <clobbers target="cordova.plugins.AirService" />
+    </js-module>
+
+
+    <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="AirService">
+          <param name="android-package" value="cordova.plugin.airservice.AirService" />
+        </feature>
+      </config-file>
+
+      <config-file parent="/*" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      </config-file>
+      
+      <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="cordova.plugin.airservice.ASWeb"></activity>
+      </config-file>
+
+      <source-file src="src/android/AirService.java" target-dir="src/cordova/plugin/airservice" />
+      <source-file src="src/android/ASWeb.java" target-dir="src/cordova/plugin/airservice" />
+
+      <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+      <resource-file src="sdks/airservice/airservice.aar" target="libs/airservice.aar" />
+      <resource-file src="sdks/jockey/jockey.aar" target="libs/jockey.aar" />
+
+    </platform>
+</plugin>

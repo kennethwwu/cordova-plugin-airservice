@@ -1,0 +1,25 @@
+repositories{
+  jcenter()
+  flatDir {
+      dirs 'libs'
+   }
+}
+
+dependencies {
+  compile(name:'airservice', ext:'aar')
+  compile(name:'jockey', ext:'aar')
+
+  compile 'com.google.code.gson:gson:2.2.4'
+  compile 'com.braintreepayments.api:braintree:2.+'
+  compile 'com.google.android.gms:play-services-wallet:8.1.0'
+  compile 'com.google.android.gms:play-services-location:8.1.0'
+
+
+}
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
+}
