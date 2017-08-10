@@ -2,6 +2,7 @@ package cordova.plugin.airservice;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.content.Intent;
 
 import com.airservice.airservicesdk.ASWebActivity;
 
@@ -12,10 +13,12 @@ public class ASWeb extends ASWebActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        appCode = "airservice-qa-sdk";
-        clientID = "22c7d3fc";
-        clientSecret = "aada245b93feb5d8e84dfeb49296da8b";
-        appCollection = "airservice-qa-sdk";
+        Intent intent = this.getIntent();
+
+        appCode = intent.getStringExtra("appCode");
+        clientID = intent.getStringExtra("clientID");
+        clientSecret = intent.getStringExtra("clientSecret");
+        appCollection =  intent.getStringExtra("appCollection");
         appEnvironment = ASEnvironment.QA;
         hostAction = ASHostActionType.Menu;
 

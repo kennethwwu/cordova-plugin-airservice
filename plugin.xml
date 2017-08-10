@@ -22,7 +22,7 @@
         <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
       </config-file>
-      
+
       <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:name="cordova.plugin.airservice.ASWeb"></activity>
       </config-file>
@@ -31,8 +31,8 @@
       <source-file src="src/android/ASWeb.java" target-dir="src/cordova/plugin/airservice" />
 
       <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-      <resource-file src="sdks/airservice/airservice.aar" target="libs/airservice.aar" />
-      <resource-file src="sdks/jockey/jockey.aar" target="libs/jockey.aar" />
+      <resource-file src="sdks/android/airservice/airservice.aar" target="libs/airservice.aar" />
+      <resource-file src="sdks/android/jockey/jockey.aar" target="libs/jockey.aar" />
 
     </platform>
 </plugin>

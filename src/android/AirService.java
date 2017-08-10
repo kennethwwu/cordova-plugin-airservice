@@ -47,6 +47,10 @@ public class AirService extends CordovaPlugin {
     private void testMethod(String message, CallbackContext callbackContext){
       if (message != null && message.length() > 0) {
           Intent intent = new Intent(this.activity, ASWeb.class);
+          intent.putExtra("appCode", "airservice-qa-sdk");
+          intent.putExtra("clientID", "22c7d3fc");
+          intent.putExtra("clientSecret", "aada245b93feb5d8e84dfeb49296da8b");
+          intent.putExtra("appCollection", "airservice-qa-sdk");
           // this.activity.startService(intent);
           this.activity.startActivity(intent);
           // callbackContext.success(message);
